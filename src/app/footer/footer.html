@@ -1,1 +1,26 @@
-<p>footer works!</p>
+<footer class="bg-gray-800 text-white py-6 mt-auto">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+      
+      <!-- Left: App Name -->
+      <div class="text-lg font-semibold">
+        &copy; {{ currentYear }} Pontos
+      </div>
+
+      <!-- Center: Navigation Links -->
+      <div class="flex space-x-4 text-sm">
+        <a routerLink="/" class="hover:text-blue-400 transition cursor-pointer select-none">Home</a>
+        <a routerLink="/about" class="hover:text-blue-400 transition cursor-pointer select-none">About</a>
+        <a routerLink="/contact" class="hover:text-blue-400 transition cursor-pointer select-none">Contact</a>
+      </div>
+
+      <!-- Right: Lucide Social Icons -->
+      <div class="flex space-x-4">
+        <a href="https://github.com/Decoy7/pontos-frontend" target="_blank" rel="noopener">
+          <lucide-icon [name]="icons.Github" class="w-5 h-5" />
+        </a>
+      </div>
+
+    </div>
+  </div>
+</footer>

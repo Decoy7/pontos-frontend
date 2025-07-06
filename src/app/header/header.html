@@ -1,1 +1,49 @@
-<h1 class="text-3xl font-bold underline">Pontos Zone</h1>
+<header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <!-- Logo / App Name -->
+            <div class="flex-shrink-0 text-xl font-bold text-blue-600 cursor-pointer select-none">
+                Pontos
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-6">
+                <a routerLink="/"
+                    class="text-gray-700 hover:text-blue-600 hover:underline transition duration-200 cursor-pointer select-none">
+                    Home
+                </a>
+                <a routerLink="/about"
+                    class="text-gray-700 hover:text-blue-600 hover:underline transition duration-200 cursor-pointer select-none">
+                    About
+                </a>
+                <a routerLink="/contact"
+                    class="text-gray-700 hover:text-blue-600 hover:underline transition duration-200 cursor-pointer select-none">
+                    Contact
+                </a>
+            </nav>
+
+            <!-- Mobile Navigation -->
+            <div *ngIf="isMobileMenuOpen" class="md:hidden px-4 pb-4">
+                <a routerLink="/"
+                    class="block py-2 text-gray-700 hover:text-blue-600 hover:underline transition duration-200 cursor-pointer">
+                    Home
+                </a>
+                <a routerLink="/about"
+                    class="block py-2 text-gray-700 hover:text-blue-600 hover:underline transition duration-200 cursor-pointer">
+                    About
+                </a>
+                <a routerLink="/contact"
+                    class="block py-2 text-gray-700 hover:text-blue-600 hover:underline transition duration-200 cursor-pointer">
+                    Contact
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div *ngIf="isMobileMenuOpen" class="md:hidden px-4 pb-4">
+        <a routerLink="/" class="block py-2 text-gray-700 hover:text-blue-600 select-none">Home</a>
+        <a routerLink="/about" class="block py-2 text-gray-700 hover:text-blue-600 select-none">About</a>
+        <a routerLink="/contact" class="block py-2 text-gray-700 hover:text-blue-600 select-none">Contact</a>
+    </div>
+</header>
