@@ -1,45 +1,44 @@
 <header class="bg-white shadow-md sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
-            <div class="flex-shrink-0 text-xl font-bold text-blue-600 cursor-pointer select-none">
-                Pontos
-            </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="text-xl font-bold text-blue-600 cursor-pointer select-none">
+        Pontos
+      </div>
 
-            <nav class="hidden md:flex space-x-6">
-                <a routerLink="/"
-                    class="text-gray-700 hover:text-blue-600 hover:underline transition duration-200 cursor-pointer select-none">
-                    Home
-                </a>
-                <a routerLink="/about"
-                    class="text-gray-700 hover:text-blue-600 hover:underline transition duration-200 cursor-pointer select-none">
-                    About
-                </a>
-                <a routerLink="/contact"
-                    class="text-gray-700 hover:text-blue-600 hover:underline transition duration-200 cursor-pointer select-none">
-                    Contact
-                </a>
-            </nav>
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex space-x-6">
+        <a routerLink="home" routerLinkActive="active"
+          class="text-gray-700 hover:text-blue-600 transition duration-200 cursor-pointer select-none">Home</a>
+        <a routerLink="calendar" routerLinkActive="active"
+          class="text-gray-700 hover:text-blue-600 transition duration-200 cursor-pointer select-none">Calendar</a>
+        <a routerLink="/about" routerLinkActive="active"
+          class="text-gray-700 hover:text-blue-600 transition duration-200 cursor-pointer select-none">About</a>
+        <a routerLink="/contact" routerLinkActive="active"
+          class="text-gray-700 hover:text-blue-600 transition duration-200 cursor-pointer select-none">Contact</a>
+      </nav>
 
-            <div *ngIf="isMobileMenuOpen" class="md:hidden px-4 pb-4">
-                <a routerLink="/"
-                    class="block py-2 text-gray-700 hover:text-blue-600 hover:underline transition duration-200 cursor-pointer">
-                    Home
-                </a>
-                <a routerLink="/about"
-                    class="block py-2 text-gray-700 hover:text-blue-600 hover:underline transition duration-200 cursor-pointer">
-                    About
-                </a>
-                <a routerLink="/contact"
-                    class="block py-2 text-gray-700 hover:text-blue-600 hover:underline transition duration-200 cursor-pointer">
-                    Contact
-                </a>
-            </div>
-        </div>
+      <!-- Mobile Menu Button -->
+      <button (click)="isMobileMenuOpen = !isMobileMenuOpen" class="md:hidden text-gray-700 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor">
+          <path *ngIf="!isMobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+          <path *ngIf="isMobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
     </div>
+  </div>
 
-    <div *ngIf="isMobileMenuOpen" class="md:hidden px-4 pb-4">
-        <a routerLink="/" class="block py-2 text-gray-700 hover:text-blue-600 select-none">Home</a>
-        <a routerLink="/about" class="block py-2 text-gray-700 hover:text-blue-600 select-none">About</a>
-        <a routerLink="/contact" class="block py-2 text-gray-700 hover:text-blue-600 select-none">Contact</a>
-    </div>
+  <!-- Mobile Nav -->
+  <div *ngIf="isMobileMenuOpen" class="md:hidden px-4 pb-4 space-y-2">
+    <a routerLink="/" routerLinkActive="active"
+      class="block text-gray-700 hover:text-blue-600 transition duration-200">Home</a>
+    <a routerLink="/calendar" routerLinkActive="active"
+      class="block text-gray-700 hover:text-blue-600 transition duration-200">Calendar</a>
+    <a routerLink="/about" routerLinkActive="active"
+      class="block text-gray-700 hover:text-blue-600 transition duration-200">About</a>
+    <a routerLink="/contact" routerLinkActive="active"
+      class="block text-gray-700 hover:text-blue-600 transition duration-200">Contact</a>
+  </div>
 </header>
