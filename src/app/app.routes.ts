@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { NewsCarousel } from './news-carousel/news-carousel';
-import { Calendar } from './calendar/calendar';
+import { NewsCarousel } from './components/news-carousel/news-carousel';
+import { Calendar } from './components/calendar/calendar';
 
 export const routes: Routes = [
     { path: '', component: NewsCarousel },
