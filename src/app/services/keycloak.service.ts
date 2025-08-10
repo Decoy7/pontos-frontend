@@ -42,4 +42,16 @@ export class KeycloakService {
   getName(): string | undefined {
     return this.keycloak?.tokenParsed?.['name'];
   }
+  
+  getEmail(): string | undefined {
+    return this.keycloak?.tokenParsed?.['email'];
+  }
+  
+  getUsername(): string | undefined {
+    return this.keycloak?.tokenParsed?.['preferred_username'];
+  }
+
+  getRole(): string | undefined {
+    return this.keycloak?.tokenParsed?.['realm_access']?.['roles'][0];
+  }
 }
