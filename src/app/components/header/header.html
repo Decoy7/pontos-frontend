@@ -1,5 +1,4 @@
-<!-- MY_UNIQUE_BUILD_TEST_COMMENT -->
-<header class="bg-gray-800 shadow-md sticky top-0 z-50">
+<header class="sticky top-0 z-50 bg-gray-800 shadow-md">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
       <div class="text-white text-xl font-bold hover:text-yellow-500 cursor-pointer select-none">
@@ -16,6 +15,8 @@
           class="text-white hover:text-yellow-300 transition cursor-pointer">About</a>
         <a routerLink="/contact" routerLinkActive="text-yellow-400"
           class="text-white hover:text-yellow-300 transition cursor-pointer">Contact</a>
+        <a *ngIf="isLoggedIn" routerLink="/profile" routerLinkActive="text-yellow-400"
+          class="text-white hover:text-yellow-300 transition cursor-pointer">Profile</a>
         <div class="flex items-center gap-4">
           <button *ngIf="!isLoggedIn" (click)="login()"
             class="px-4 py-2 rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors shadow-md cursor-pointer">
