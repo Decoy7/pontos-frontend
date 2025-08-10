@@ -6,4 +6,7 @@ export const routes: Routes = [
     { path: '', component: NewsCarousel },
     { path: 'home', component: NewsCarousel },
     { path: 'calendar', component: Calendar },
+    { path: 'about', component: Calendar },
+    { path: 'contact', component: Calendar },
+    { path: '**', redirectTo: 'home' }
 ];

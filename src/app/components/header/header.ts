@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { KeycloakService } from '../../services/keycloak.service';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -10,7 +11,26 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './header.css'
 })
 export class Header {
-  isMobileMenuOpen = false;
+  isMobileMenuOpen: boolean = false;
+  isLoggedIn: boolean = false;
+  name: string | undefined = '';
+
+  constructor(private keycloak: KeycloakService) {
+    if (this.keycloak.isLoggedIn()) {
+      this.isLoggedIn = true;
+    } else {
+      this.isLoggedIn = false;
+    }
+  }
+
+  login() {
+    this.keycloak.login();
+    this.isLoggedIn = true;
+  }
+
+  logout() {
+    this.keycloak.logout();
+  }
 
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;

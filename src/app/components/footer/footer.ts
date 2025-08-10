@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { LucideAngularModule, Github  } from 'lucide-angular';
-import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
-  selector: 'app-footer',
   standalone: true,
-  imports: [LucideAngularModule, RouterLink, RouterLinkActive],
+  selector: 'app-footer',
+  imports: [LucideAngularModule],
   templateUrl: './footer.html',
   styleUrls: ['./footer.css']
 })

@@ -8,7 +8,7 @@ import { NewsCard } from '../news-card/news-card';
   selector: 'app-news-carousel',
   imports: [CommonModule, FormsModule, NewsCard],
   templateUrl: './news-carousel.html',
-  styleUrl: './news-carousel.css'
+  styleUrl: './news-carousel.css',
 })
 export class NewsCarousel {
   newsItems = [{
